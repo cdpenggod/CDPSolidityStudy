@@ -55,7 +55,7 @@ contract CDPStakingPool {
     function getNowTime() public view returns (uint256) {
         return block.timestamp;
     }
-    // 获取当前时间每单位数量的累加值,已奖励数量 + (当前时间 - 最后更新时间) * (每秒奖励 / 质押总量)
+    // 获取当前时间每单位数量的累加值,每单位已奖励数量 + (当前时间 - 最后更新时间) * (每秒奖励 / 质押总量)
     function getNowPerTokenReward() public view returns (uint256) {
         if (_totalSupply == 0) {
             return perTokenRewardStored;
@@ -70,8 +70,8 @@ contract CDPStakingPool {
     function earned(address user) public view returns (uint256) {
         // 用户质押的数量
         uint256 stakingCount = _balances[user];
-        // 用户最新赚取的数量
-        uint256 newEarnCount = stakingCount * (getNowPerTokenReward() - perTokenRewardStoredForUser[user]);
+        // 用户最新赚取的数量 (因为stakingCount数量是带10^18的，所以后面要先乘后除，确保最后数量准确且中间不会产生小数)
+        uint256 newEarnCount = stakingCount * (getNowPerTokenReward() - perTokenRewardStoredForUser[user]) / (10**18);
         // 之前已经赚取的数量
         uint256 earnCount = rewards[user];
         return newEarnCount + earnCount;

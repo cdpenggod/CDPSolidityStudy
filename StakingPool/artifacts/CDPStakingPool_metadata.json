@@ -345,11 +345,11 @@
 			]
 		},
 		"StakingPool/CDPStakingPool.sol": {
-			"keccak256": "0xe1f3e4ba7dd3be19662e304bbcb7673510d30cca39eb577807900579fd40a796",
+			"keccak256": "0x992bafc3fde6ee3a7de5f60eec85a74f18762200f52123872066790882d1b653",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://00f1574279fa010d22d5fe64c3a421077a1e33e06df96ff7cc9903a4252c7646",
-				"dweb:/ipfs/QmP5CLfXccXftKV9dXR2wDgpkTYPmCkJiERwUxpVH65zTp"
+				"bzz-raw://c06589826170438d651614576779ca96f6300eceb31c733a94cefa386b1c1308",
+				"dweb:/ipfs/QmUkrAs6iDrJaLJmtcnCG3g8on6Vug6q1tLyLMREPcae3M"
 			]
 		}
 	},
