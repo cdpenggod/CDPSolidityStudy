@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract LogicV2 is Initializable {
-    uint256 version = 2;
+    uint256 constant version = 2;
     uint256 changeValue;
     // 数值改变通知
     event ValueHaveChange(uint256);

@@ -2,7 +2,7 @@ import { ethers, network } from "hardhat";
 import { storeCDP20TokenAddress } from "./helper";
 
 async function main() {
-  const Token = await ethers.getContractFactory("CDP20");
+  const Token = await ethers.getContractFactory("CDPPublish20");
   const token = await Token.deploy();
 
   // 等待部署完成
