@@ -40,5 +40,5 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 };
 
 // npx hardhat deploy --network {network} --tags {Tag}
-func.tags = ["MyContract"];
+func.tags = ["Logic"];
 export default func;
